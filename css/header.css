@@ -1,0 +1,109 @@
+header {
+  background-color: white;
+  -webkit-box-shadow: 0px 8px 21px 5px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 8px 21px 5px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 8px 21px 5px rgba(34, 60, 80, 0.2);
+}
+
+header .header .logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  position: relative;
+}
+
+header .header .logo .rectangle {
+  background-color: black;
+  width: 40vw;
+  border: 1px solid #111;
+}
+
+header .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 60px;
+  align-items: center;
+  justify-items: center;
+}
+
+header .container div {
+  position: relative;
+}
+
+header .container div ::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  background-color: #000000;
+  height: 1px;
+  width: 0%;
+  transition: 0.2s ease;
+  transform: translateX(-50%);
+}
+
+header .container div :hover::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  background-color: #000000;
+  height: 1px;
+  width: 100%;
+}
+
+header .container div ::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-color: #000000;
+  height: 1px;
+  width: 100%;
+  transition: 0.2s ease;
+  transform: translateX(-50%);
+}
+
+header .container div :hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  background-color: #000000;
+  height: 1px;
+  width: 0%;
+}
+
+header .container p {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  position: relative;
+}
+
+@media (max-width: 800px) {
+  header .container p {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 550px) {
+  header .container p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 340px) {
+  header .container p {
+    font-size: 10px;
+  }
+}
+
+.headerFixed {
+  position: fixed;
+  z-index: 100;
+  transform: translateZ(15px);
+  width: 100%;
+  background-color: white;
+}
